@@ -97,3 +97,28 @@ unsigned int Item::getDiscount() const noexcept
 {
     return discount;
 }
+
+Item& Item::operator++()
+{
+    if(getInventory() < 1)
+    {
+        throw invalid_argument("Item out of stock.");
+    }
+    ++soldCount;
+    
+    setInventory(getInventory() - 1); //This is because accessing member data only with set and get functions reduces the problems of changing the code.   
+    
+    if((soldCount % 5) == (soldCount/5 - 1))
+    {
+        if(getInventory() < 1)
+        {
+            cerr << "Your discount cannot be calculated due to lack of inventory.";
+            return *this;
+        }
+        ++soldCount;
+        ++discount;
+        setInventory(getInventory() - 1);
+    }
+
+    return *this;
+}
