@@ -17,3 +17,11 @@ Item::Item(const string& i_name , double i_price , int i_inventory , const strin
     setInventory(i_inventory);
     setUnit(i_unit);
 }
+
+ostream & Item::utilityPrint(ostream& outPut) const noexcept
+{
+    outPut<< left << setw(8) << name << " $" << setw(10) << getPrice()
+        << " per " << setw(8) << getUnit() << " ((Quantity ---> " << setw(3) << getSoldCount() << ' ' << getUnit() << "))";
+
+    return outPut;
+}
