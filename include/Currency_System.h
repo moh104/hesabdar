@@ -9,7 +9,7 @@ private:
     double amount;
 
 public:
-    Currency(const double&);
+    Currency(const double);
 
     virtual double to_usd() const = 0;
     virtual std::string get_unit() const = 0;
@@ -18,7 +18,6 @@ public:
     double get_amount() const;
 
     virtual ~Currency();
-
 
 };
 

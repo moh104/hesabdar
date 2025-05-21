@@ -1,6 +1,6 @@
 #include "Currency_System.h"
-Currency::Currency(const double& public_class) {
-    this->amount = public_class;
+Currency::Currency(const double amount) {
+    this->amount = amount;
 }
 
 
@@ -10,7 +10,7 @@ double Currency::get_amount() const {
 
 
 void Currency::print() const {
-    std::cout << amount << " " << get_unit();
+    std::cout << amount << " " << get_unit() << std::endl;
 }
 
 Currency::~Currency(){}

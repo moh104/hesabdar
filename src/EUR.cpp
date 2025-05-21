@@ -1,6 +1,6 @@
 #include "EUR.h"
 
-Eur::Eur(double& eur_currency) : Currency(eur_currency) {}
+Eur::Eur(double eur_currency) : Currency(eur_currency) {}
 
 double Eur::to_usd() const {
     return get_amount() * 1.1203;

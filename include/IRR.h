@@ -4,7 +4,7 @@
 
 class Irr : public Currency {
 public:
-    Irr(double&);
+    Irr(double);
 
     double to_usd() const override;
     std::string get_unit() const override;

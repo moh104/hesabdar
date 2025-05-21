@@ -5,7 +5,7 @@
 
 class Usd : public Currency {
 public:
-    Usd(double&);
+    Usd(double);
     double to_usd() const override;
     std::string get_unit() const override;
 };

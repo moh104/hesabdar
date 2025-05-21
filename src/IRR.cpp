@@ -1,6 +1,6 @@
 #include "IRR.h"
 
-Irr::Irr(double& irr_currency) : Currency(irr_currency) {}
+Irr::Irr(double irr_currency) : Currency(irr_currency) {}
 
 double Irr::to_usd() const {
     return get_amount() / 80.0;
