@@ -28,8 +28,4 @@ bool operator<(
 bool operator>(
     std::shared_ptr<Currency>, std::shared_ptr<Currency>);
 
-std::ostream operator<<(
-    std::ostream&, const std::shared_ptr<Currency>);
-
-
 #endif // CURRENCY_OPERATORS
