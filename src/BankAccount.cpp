@@ -25,8 +25,16 @@ bool BankAccount::deposit(const double& amount) {
 }
 
 bool BankAccount::withdraw(const double& amount) {
-    if(amount <= 0 || amount > balance || (daily_transferred + amount) > daily_limit) {
-        return false;
+    if(amount <= 0) {
+        throw std::invalid_argument("Withdrawal amount must be greater than zero.");
+    }
+
+    if(amount > balance) {
+        throw std::runtime_error("Insufficient inventory");
+    }
+
+    if((daily_transferred + amount) > daily_limit) {
+        throw std::runtime_error("Daily transfer limit exceeded");
     }
     balance -= amount;
     daily_transferred += amount;
